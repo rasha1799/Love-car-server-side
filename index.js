@@ -120,15 +120,6 @@ async function run() {
         }
       }
     });
-    //Put API
-    app.put(
-      "/orders/:id",
-      async(req, (res) => {
-        const query = { _id: ObjectId(req.params.id) };
-        const update = { $set: {} };
-        const result = await ordersFormCollection.updateOne(query, update);
-      })
-    );
 
     //get my Orders
     app.get("/myOrders/:email", async (req, res) => {
